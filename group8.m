@@ -2,7 +2,7 @@
 data = readtable("Rice_Cammeo_Osmancik.xlsx");  
 disp(data);
 
-% Filter the data for each class
+% Filter the data for each class 
 cammeoData = data(strcmp(data.Class, 'Cammeo'), :);
 osmancikData = data(strcmp(data.Class, 'Osmancik'), :);
 
