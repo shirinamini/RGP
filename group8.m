@@ -1,7 +1,5 @@
 % Load the dataset 
 data = readtable("Rice_Cammeo_Osmancik.xlsx");  
-
-% View the first few rows of the table to understand its structure
 disp(data);
 
 % Filter the data for each class
@@ -9,19 +7,19 @@ cammeoData = data(strcmp(data.Class, 'Cammeo'), :);
 osmancikData = data(strcmp(data.Class, 'Osmancik'), :);
 
 
-% Calculate the mean for each class (excluding the last column)
+% Calculate the mean for each variable on each class (excluding the last column)
 meanCammeo = mean(cammeoData{:, 1:end-1});  
 meanOsmancik = mean(osmancikData{:, 1:end-1});  
 disp(meanCammeo);
 disp(meanOsmancik);
 
-% Calculate the median for each class (excluding the last column)
+% Calculate the median for each variable on each class (excluding the last column)
 medianC = median(cammeoData{:, 1:end-1});  
 medianO = median(osmancikData{:, 1:end-1}); 
 disp(medianC);
 disp(medianO);
 
-% Calculate the std for each class (excluding the last column)
+% Calculate the std for each variable on each class (excluding the last column)
 stdC = std(cammeoData{:, 1:end-1});  
 stdO = std(osmancikData{:, 1:end-1});  
 disp(stdC);
@@ -30,7 +28,7 @@ disp(stdO);
 cammeoData = data(strcmp(data{:, end}, 'Cammeo'), :);
 osmancikData = data(strcmp(data{:, end}, 'Osmancik'), :);
 
-% Extract the feature you're interested in (e.g., Area)
+% Extract the Area in first coloumn 
 cammeoArea = cammeoData{:, 1};
 osmancikArea = osmancikData{:, 1};  
 
@@ -50,7 +48,7 @@ legend('show');
 
 hold off;
 
-% Extract the Eccentricity (now assuming it is in the 5th column)
+% Extract the Eccentricity 
 cammeoEccentricity = cammeoData{:, 5}; 
 osmancikEccentricity = osmancikData{:, 5};  
 
