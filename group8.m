@@ -1,4 +1,4 @@
-% Load the dataset (assuming it's in CSV format; you may need to adjust the file type)
+% Load the dataset 
 data = readtable("Rice_Cammeo_Osmancik.xlsx");  
 
 % View the first few rows of the table to understand its structure
