@@ -2,6 +2,17 @@
 data = readtable("Rice_Cammeo_Osmancik.xlsx");  
 disp(data);
 
+% Check if there are any missing values
+if any(ismissing(data))
+    disp('Missing values detected in the dataset.');
+else
+    disp('No missing values found in the dataset.');
+end
+
+% Summary statistics
+disp('Summary of dataset:');
+summary(data)
+
 % Filter the data for each class 
 cammeoData = data(strcmp(data.Class, 'Cammeo'), :);
 osmancikData = data(strcmp(data.Class, 'Osmancik'), :);
