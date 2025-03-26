@@ -36,8 +36,6 @@ stdO = std(osmancikData{:, 1:end-1});
 disp(stdC);
 disp(stdO);
 
-cammeoData = data(strcmp(data{:, end}, 'Cammeo'), :);
-osmancikData = data(strcmp(data{:, end}, 'Osmancik'), :);
 
 % Extract the Area in first coloumn 
 cammeoArea = cammeoData{:, 1};
